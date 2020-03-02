@@ -2,7 +2,8 @@
 #include <vector>
 #include <string>
 
-#include <Perso.cpp>
+#include <Perso.h>
+#include <Cible.h>
 
 using namespace std;
 
