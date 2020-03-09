@@ -1,12 +1,12 @@
 #include <string>
  
-class Personnage
+class Perso
 {
     public:
  
-    Personnage(std::string nomArme, int degatsArme); //Constructeur
+    Perso(std::string nomArme, int degatsArme); //Constructeur
     void recevoirDegats(int nbDegats);
-    void attaquer(Personnage &cible);
+    void attaquer(Perso &cible);
     void boirePotionDeVie(int quantitePotion);
     void changerArme(std::string nomNouvelleArme, int degatsNouvelleArme);
     bool estVivant();

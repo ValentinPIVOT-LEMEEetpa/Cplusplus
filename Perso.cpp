@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Personnage::Personnage()
+Perso::Perso()
 {
     m_vie = 100;
     m_mana = 100;
@@ -21,13 +21,13 @@ void Perso::recevoirDegats(int nbDegats)
     }
 }
 
-void Personnage::attaquer(Personnage &cible)
+void Perso::attaquer(Personnage &cible)
 {
     cible.recevoirDegats(m_degatsArme);
     //On inflige à la cible les dégâts que cause notre arme
 }
 
-void Personnage::boirePotionDeVie(int quantitePotion)
+void Perso::boirePotionDeVie(int quantitePotion)
 {
     m_vie += quantitePotion;
 
@@ -37,13 +37,13 @@ void Personnage::boirePotionDeVie(int quantitePotion)
     }
 }
 
-void Personnage::changerArme(string nomNouvelleArme, int degatsNouvelleArme)
+void Perso::changerArme(string nomNouvelleArme, int degatsNouvelleArme)
 {
     m_nomArme = nomNouvelleArme;
     m_degatsArme = degatsNouvelleArme;
 }
 
-bool Personnage::estVivant()
+bool Perso::estVivant()
 {
     if (m_vie > 0) //Plus de 0 de vie ?
     {

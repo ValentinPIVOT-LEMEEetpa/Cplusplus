@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Personnage.h" //Ne pas oublier
+#include "Perso.h" 
+#include "Cible.h"
 
 using namespace std;
 

@@ -1,5 +1,4 @@
 #include <Cible.h>
-#include <Perso.h>
 
 Cible::Cible(): _pv(50), _pvMax(50){};
 Cible::Cible
