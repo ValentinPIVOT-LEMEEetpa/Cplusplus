@@ -2,12 +2,12 @@
 
 using namespace std;
 
-Perso::Perso()
+Perso::Perso(int, int)
 {
+    string m_nom = "Épée rouillée";
     m_vie = 100;
     m_mana = 100;
-    m_nomArme = "Épée rouillée";
-    m_degatsArme = 10;
+    m_degats = 20;
 }
 
 void Perso::recevoirDegats(int nbDegats)
@@ -21,9 +21,9 @@ void Perso::recevoirDegats(int nbDegats)
     }
 }
 
-void Perso::attaquer(Personnage &cible)
+void Perso::attaquer(Perso &cible)
 {
-    cible.recevoirDegats(m_degatsArme);
+    cible.recevoirDegats(m_degats);
     //On inflige à la cible les dégâts que cause notre arme
 }
 
@@ -37,10 +37,10 @@ void Perso::boirePotionDeVie(int quantitePotion)
     }
 }
 
-void Perso::changerArme(string nomNouvelleArme, int degatsNouvelleArme)
+void Perso::changer(string nomNouvelle, int degatsNouvelle)
 {
-    m_nomArme = nomNouvelleArme;
-    m_degatsArme = degatsNouvelleArme;
+    m_nom = nomNouvelle;
+    m_degats = degatsNouvelle;
 }
 
 bool Perso::estVivant()

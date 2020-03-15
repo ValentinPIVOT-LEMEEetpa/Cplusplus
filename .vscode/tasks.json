@@ -9,7 +9,7 @@
                 "-g",
                 "${workspaceFolder}\\*.cpp",
                 "-o",
-                "${workspaceFolder}\\helloworld.exe"
+                "${workspaceFolder}\\main.exe"
             ],
             "options": {
                 "cwd": "C:\\MinGW\\bin"
