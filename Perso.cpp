@@ -1,56 +1,33 @@
+#ifndef PERSO_CPP
+#define PERSO_CPP
+
+#include <string>
 #include "Perso.h"
 
-using namespace std;
-
-Perso::Perso(int, int)
-{
-    string m_nom = "Épée rouillée";
-    m_vie = 100;
-    m_mana = 100;
-    m_degats = 20;
-}
-
-void Perso::recevoirDegats(int nbDegats)
-{
-    m_vie -= nbDegats;
-    //On enlève le nombre de dégâts reçus à la vie du personnage
-    
-    if (m_vie < 0) //Pour éviter d'avoir une vie négative
-    {
-        m_vie = 0; //On met la vie à 0 (cela veut dire mort)
+    /*std::string _nom;
+    int _dossard;
+    int _motivation;
+    int _distance;*/
+ 
+    std::string Perso::getName(){
+        return _nom;
     }
-}
 
-void Perso::attaquer(Perso &cible)
-{
-    cible.recevoirDegats(m_degats);
-    //On inflige à la cible les dégâts que cause notre arme
-}
-
-void Perso::boirePotionDeVie(int quantitePotion)
-{
-    m_vie += quantitePotion;
-
-    if (m_vie > 100) //Interdiction de dépasser 100 de vie
-    {
-        m_vie = 100;
+    std::string Perso::getLook(){
+        return "@" + std::to_string(_dossard);
     }
-}
 
-void Perso::changer(string nomNouvelle, int degatsNouvelle)
-{
-    m_nom = nomNouvelle;
-    m_degats = degatsNouvelle;
-}
+    int Perso::getDistance(){
+        return _distance;
+    }
 
-bool Perso::estVivant()
-{
-    if (m_vie > 0) //Plus de 0 de vie ?
-    {
-        return true; //VRAI, il est vivant !
+    void Perso::avancer(){
+        _distance += _motivation;
+        _motivation --;
     }
-    else
-    {
-        return false; //FAUX, il n'est plus vivant !
-    }
-}
+
+    Perso::Perso(std::string name, int motiv, int numero):
+        _nom(name), _motivation(motiv), _dossard(numero), _distance(0)
+    {}
+
+#endif
